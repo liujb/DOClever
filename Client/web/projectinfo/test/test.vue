@@ -1,6 +1,6 @@
 <template>
-    <el-row class="row" style="margin:0 0 0 5px" :gutter="20">
-        <el-col class="col" :span="7" style="background-color: white;box-shadow: 2px 2px 2px #888888;border-radius: 5px;margin: 0;padding: 0">
+    <el-row class="row" style="margin:0 0 0 5px">
+        <el-col class="col" :span="5" style="background-color: white;border: 1px solid #e1e1e1;border-radius: 5px;margin: 0;padding: 0">
             <el-row class="row" style="height: 50px;background-color: #50bfff;color: white;margin: 0;padding: 0">
                 <el-col class="col" :span="6" style="line-height: 50px;text-align: center;font-weight: bold;font-size: 15px;padding: 0">
                     模块
@@ -28,9 +28,9 @@
                 </el-col>
             </el-row>
         </el-col>
-        <el-col class="col" :span="17" v-if="selNode">
+        <el-col class="col" :span="19" v-if="selNode" style="padding-left: 15px">
             <el-row class="row">
-                <el-row class="row" style="background-color: white;border-radius: 5px;box-shadow: 0px 2px 2px #888888;padding: 15px 0" >
+                <el-row class="row" style="background-color: white;border-radius: 5px;border: 1px solid #e1e1e1;padding: 15px 0" >
                     <el-row class="row" style="height: 50px;line-height: 50px">
                         <el-col class="col" :span="2" style="text-align: center;color: gray">
                             名称
@@ -88,7 +88,7 @@
                         </el-col>
                     </el-row>
                 </el-row>
-                <el-row class="row" style="background-color: white;padding: 20px;margin-top: 15px;border-radius: 5px;box-shadow: 0px 2px 2px #888888;">
+                <el-row class="row" style="background-color: white;padding: 20px;margin-top: 15px;border-radius: 5px;border: 1px solid #e1e1e1;">
                     <el-tabs type="card">
                         <el-tab-pane label="内容">
                             <el-row class="row" style="height: 50px">
@@ -102,7 +102,7 @@
                         </el-tab-pane>
                     </el-tabs>
                 </el-row>
-                <el-row class="row" style="background-color: white;padding: 20px;margin-top: 15px;border-radius: 5px;box-shadow: 0px 2px 2px #888888;">
+                <el-row class="row" style="background-color: white;padding: 20px;margin-top: 15px;border-radius: 5px;border: 1px solid #e1e1e1;">
                     <el-tabs type="card">
                         <el-tab-pane label="输出">
                             <el-row class="row" v-html="test.output">

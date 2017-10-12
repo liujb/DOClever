@@ -6,7 +6,7 @@
             </el-tab-pane>
             <el-tab-pane :label="queryTab" name="query">
                 <inparamquery :index="index" :item="item"></inparamquery>
-                <el-button size="small" type="primary" style="margin-top: 10px;margin-left: 10px" @click="importQuery">导入Query字符串</el-button>
+                <el-button size="small" type="primary" style="margin:15px" @click="importQuery">导入Query字符串</el-button>
             </el-tab-pane>
             <el-tab-pane :label="headerTab" name="header">
                 <inparamheader :index="index" :item="item"></inparamheader>

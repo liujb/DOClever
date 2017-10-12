@@ -1,6 +1,6 @@
 <template>
-    <el-row class="row" style="margin:0 0 0 5px" id="body" :gutter="20">
-        <el-col class="col" :span="bMax?0:6" style="min-height: 600px;background-color: white;box-shadow: 2px 2px 2px #888888;border-radius: 5px;margin: 0;padding: 0" v-show="!bMax">
+    <el-row class="row" id="body">
+        <el-col class="col" :span="bMax?0:5" style="min-height: 600px;background-color: white; border: 1px solid #e1e1e1;border-radius: 5px;margin: 0;padding: 0" v-show="!bMax">
             <el-row class="row" style="height: 50px;background-color: #50bfff;color: white;margin: 0;padding: 0" id="group" v-if="!search">
                 <el-col class="col" :span="6" style="line-height: 50px;text-align: center;font-weight: bold;font-size: 15px;padding: 0">
                     分组
@@ -31,10 +31,10 @@
             </el-row>
             <interfacelist></interfacelist>
         </el-col>
-        <el-col class="col" :span="bMax?24:18" id="info">
+        <el-col class="col" :span="bMax?24:19" id="info" style="padding-left: 15px;">
             <el-row class="row" v-if="preview==0 && interfaceEdit">
-                <span :class="bMax?'fa fa-compress':'fa fa-expand'" style="position: absolute;left: 5px;top: 5px;z-index: 1000;cursor: pointer;color:#50bfff " :title="bMax?'缩小':'放大'" @click="bMax=!bMax"></span>
-                <el-row class="row" style="background-color: white;border-radius: 5px;box-shadow: 0px 2px 2px #888888;padding: 15px 0" >
+                <!-- <span :class="bMax?'fa fa-compress':'fa fa-expand'" style="position: absolute;left: 5px;top: 5px;z-index: 1000;cursor: pointer;color:#50bfff " :title="bMax?'缩小':'放大'" @click="bMax=!bMax"></span> -->
+                <el-row class="row" style="background-color: white;border-radius: 5px;padding: 15px 0; border: 1px solid #e1e1e1" >
                     <el-row class="row" style="height: 50px;line-height: 50px">
                         <el-col class="col" :span="2" style="text-align: center;color: gray">
                             名称
@@ -124,7 +124,7 @@
                         </el-col>
                     </el-row>
                 </el-row>
-                <el-row class="row" style="background-color: white;padding: 10px 20px 10px 20px;margin-top: 15px;border-radius: 5px;box-shadow: 0px 2px 2px #888888;" v-if="interfaceEdit._id">
+                <el-row class="row" style="background-color: white;padding: 10px 20px 10px 20px;margin-top: 15px;border-radius: 5px; border: 1px solid #e1e1e1;" v-if="interfaceEdit._id">
                     <el-row class="row" style="height: 50px;line-height: 50px">
                         <el-col class="col" :span="2" style="text-align: center;color: gray">
                             快照
@@ -166,7 +166,7 @@
                         </el-col>
                     </el-row>
                 </el-row>
-                <el-tabs type="card" editable @edit="editTab" style="background-color: white;padding: 20px;margin-top: 15px;border-radius: 5px;box-shadow: 0px 2px 2px #888888;" id="mainParam" v-model="tabIndex">
+                <el-tabs type="card" editable @edit="editTab" style="background-color: white;padding: 20px;margin-top: 15px;border-radius: 5px; border: 1px solid #e1e1e1;" id="mainParam" v-model="tabIndex">
                     <template v-for="(item, index) in param">
                         <el-tab-pane :key="item.id" :name="index">
                             <span slot="label">
@@ -200,10 +200,10 @@
 <style>
     #mainParam>.el-tabs__content
     {
-        padding: 0 10px 10px 10px;
+        /* padding: 0 10px 10px 10px;
         border-left: 1px lightgray solid;
         border-right: 1px lightgray solid;
-        border-bottom: 1px lightgray solid;
+        border-bottom: 1px lightgray solid; */
     }
     .el-tabs__new-tab
     {

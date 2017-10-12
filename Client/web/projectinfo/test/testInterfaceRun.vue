@@ -54,7 +54,7 @@
                 <el-input type="textarea" :rows="2" style="width: 95%" v-model="objInterface.remark" :disabled="true"></el-input>
             </el-col>
         </el-row>
-        <el-tabs type="card" style="background-color: white;padding: 20px;margin-top: 15px;border-radius: 5px;box-shadow: 0px 2px 2px #888888;" v-model="tabIndex" id="mainTest">
+        <el-tabs type="card" style="background-color: white;padding: 20px;margin-top: 15px;border-radius: 5px;border: 1px solid #e1e1e1;;" v-model="tabIndex" id="mainTest">
             <template v-for="(item, index) in originInterface.param">
                 <el-tab-pane :key="item.id" :name="index">
                     <span slot="label">

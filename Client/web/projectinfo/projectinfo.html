@@ -23,7 +23,7 @@
         }
         #mainTab.el-tabs--card>.el-tabs__header>.el-tabs__nav-wrap>.el-tabs__nav-scroll
         {
-            text-align: center;
+            text-align: left;
         }
         #mainTab.el-tabs--card>.el-tabs__header>.el-tabs__nav-wrap>.el-tabs__nav-scroll>.el-tabs__nav
         {
@@ -33,18 +33,21 @@
         {
             box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.15);
         }
+        input {
+          border: none;
+        }
     </style>
 </head>
 <body>
 <div class="container" id="app"  v-cloak>
     <mainnav ref="nav">
-        <el-row class="row" style="text-align: center;height: 50px;line-height: 50px;font-size: 25px;color: #50bfff" slot="title">{{session.projectName}}{{session.versionId?("("+session.versionName+")"):""}}</el-row>
-    </mainnav>
-    <el-row class="row" style="margin-top: 15px;height: calc(100vh - 65px);">
-        <div style="position: absolute;top: 5px;left: 10px;z-index: 1000;">
-            项目：&nbsp;
-            <el-autocomplete class="inline-input" v-model="selProject" :fetch-suggestions="querySearch" placeholder="筛选你的项目" icon="caret-bottom" :on-icon-click="showAutoComplete" @select="changeProject" popper-class="my-autocomplete" custom-item="itemauto" id="projectChange" style="width: 170px"></el-autocomplete>
+        <div slot="slot1">
+            <el-autocomplete class="inline-input" v-model="selProject" :fetch-suggestions="querySearch" placeholder="筛选你的项目" icon="caret-bottom" :on-icon-click="showAutoComplete" @select="changeProject" popper-class="my-autocomplete" custom-item="itemauto" id="projectChange" style="width:140px"></el-autocomplete>
         </div>
+        <!-- <el-row class="row" style="text-align: center;height: 50px;line-height: 50px;font-size: 20px;color: #50bfff" slot="title">{{session.projectName}}{{session.versionId?("("+session.versionName+")"):""}}</el-row> -->
+    </mainnav>
+
+    <el-row style="margin-top: 15px;height: calc(100vh - 65px);border-radius: 5px; margin: 20px">
         <el-tabs v-model="type" type="card" id="mainTab">
             <el-tab-pane label="接口" :name="0">
                 <el-col class="col" :span="24" style="overflow-x: hidden;overflow-y: auto;height: calc(100vh - 122px);">

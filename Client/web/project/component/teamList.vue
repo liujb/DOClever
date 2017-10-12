@@ -2,8 +2,11 @@
     <div style="width: 100%;">
         <table style="background-color: transparent;width: 100%;height: 100%" v-if="arrCreate.length>0">
             <thead>
-                <th style="text-align: left;font-size: 20px">
-                    我创建的:
+                <th style="text-align: left;padding: 10px;">
+                    <el-select v-model="$store.state.teamCreateSort" @input="changeSortCreate" style="width: 120px">
+                        <el-option label="创建时间" :value="0"></el-option>
+                        <el-option label="名称" :value="1"></el-option>
+                    </el-select>
                 </th>
                 <th>
                     &nbsp;
@@ -12,11 +15,7 @@
                     &nbsp;
                 </th>
                 <th style="text-align: right;font-size: 15px">
-                    排序：
-                    <el-select v-model="$store.state.teamCreateSort" @input="changeSortCreate" style="width: 120px">
-                        <el-option label="创建时间" :value="0"></el-option>
-                        <el-option label="名称" :value="1"></el-option>
-                    </el-select>
+                    &nbsp;
                 </th>
             </thead>
             <tbody>
@@ -28,10 +27,10 @@
                                 <div style="display: table-cell;vertical-align: middle">
                                     {{arrCreate[(n-1)*4+(index-1)].name}}
                                 </div>
-                                <el-row class="row" style="height: 30px;line-height:30px;font-size: 15px;color: gray;position: absolute;left: 0;bottom: 0;text-align: left;background-color: rgba(215,215,215,0.51)">
+                                <!-- <el-row class="row" style="height: 30px;line-height:30px;font-size: 15px;color: gray;position: absolute;left: 0;bottom: 0;text-align: left;background-color: rgba(215,215,215,0.51)">
                                     &nbsp;{{"成员:"+arrCreate[(n-1)*4+(index-1)].userCount}}&nbsp;
                                     {{"项目:"+arrCreate[(n-1)*4+(index-1)].projectCount}}
-                                </el-row>
+                                </el-row> -->
                             </div>
                         </td>
                     </template>
@@ -41,21 +40,20 @@
         </table>
         <table style="background-color: transparent;width: 100%;height: 100%" v-if="arrJoin.length>0">
             <thead>
-                <th style="text-align: left;font-size: 20px">
-                    我加入的:
-                </th>
-                <th>
-                    &nbsp;
-                </th>
-                <th>
-                    &nbsp;
-                </th>
-                <th style="text-align: right;font-size: 15px">
-                    排序：
-                    <el-select v-model="$store.state.teamJoinSort" @input="changeSortJoin" style="width: 120px">
+                <th style="text-align: left;padding: 10px;">
+                  <el-select v-model="$store.state.teamJoinSort" @input="changeSortJoin" style="width: 120px">
                         <el-option label="创建时间" :value="0"></el-option>
                         <el-option label="名称" :value="1"></el-option>
                     </el-select>
+                </th>
+                <th>
+                    &nbsp;
+                </th>
+                <th>
+                    &nbsp;
+                </th>
+                <th>
+                    &nbsp;
                 </th>
             </thead>
             <tbody>
@@ -67,10 +65,10 @@
                                 <div style="display: table-cell;vertical-align: middle">
                                     {{arrJoin[(n-1)*4+(index-1)].name}}
                                 </div>
-                                <el-row class="row" style="height: 30px;line-height:30px;font-size: 15px;color: gray;position: absolute;left: 0;bottom: 0;text-align: left;background-color: rgba(215,215,215,0.51)">
+                                <!-- <el-row class="row" style="height: 30px;line-height:30px;font-size: 15px;color: gray;position: absolute;left: 0;bottom: 0;text-align: left;background-color: rgba(215,215,215,0.51)">
                                     &nbsp;{{"成员:"+arrJoin[(n-1)*4+(index-1)].userCount}}&nbsp;
                                     {{"项目:"+arrJoin[(n-1)*4+(index-1)].projectCount}}
-                                </el-row>
+                                </el-row> -->
                             </div>
                         </td>
                     </template>
@@ -82,7 +80,7 @@
 </template>
 <style>
     .item{
-        text-align: center;font-size:20px;color: #50a3ff;width: 100%;height: 100%;cursor: pointer;position: relative;box-shadow: 2px 2px 2px #888888;
+        text-align: center;font-size:20px;color: #50a3ff;width: 100%;height: 100%;cursor: pointer;position: relative;border: 1px solid #e1e1e1;
     }
     @keyframes up {
         from {top:0px}
