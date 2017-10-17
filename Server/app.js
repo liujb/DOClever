@@ -49,7 +49,7 @@ var app = express();
     app.use("/html",express.static(path.join(__dirname, '../Client')));
     app.use("/img",express.static(con.imgPath));
     app.use("/",function (req,res) {
-        res.redirect("/html/web/index.html");
+        res.redirect("/html/web/project/project.html");
     });
 // catch 404 and forward to error handler
     app.use(function(req, res, next) {
