@@ -2,7 +2,7 @@
     <el-row id="navBar" class="row" :style="transparent?{height:'50px','backgroundColor':'rgba(0,0,0,0.3)',left:0,top:0,position:'absolute'}:{height:'50px','backgroundColor':'#333'}">
         <slot name="other"></slot>
         <el-col class="col" :span="3" style="text-align: left;line-height: 50px;color:#50bfff ;font-size: 25px;padding-left: 20px">
-            <a style="text-decoration: none;cursor: pointer;color: inherit" href="/">Manhattan</a>
+            <a style="text-decoration: none;cursor: pointer;color: inherit" href="/">曼哈顿</a>
         </el-col>
         <!-- <el-col class="col" :span="2" style="text-align: center;line-height: 50px;">
             <slot name="slot3">
